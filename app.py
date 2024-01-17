@@ -4,6 +4,7 @@ from random import randint
 from time import sleep 
 
 
+
 def clicar(x: int, y:int):
     pg.click(x=x, y=y, duration=2)
     sleep(1)
@@ -23,9 +24,19 @@ def digitar_texto(texto: str):
     sleep(1)
 
 
+def esperar_pagina_carregar():
+    sleep(40)
 
 
+# Abrindo o navegador:
 pressionar_botao('win')
 digitar_texto('Google Chrome')
 pressionar_botao('enter')
 clicar(x=302, y=643)
+
+# Acessando o site: https://file-examples.com/
+digitar_texto('https://file-examples.com/')
+pressionar_botao('enter')
+esperar_pagina_carregar()
+clicar(x=733, y=478)
+
