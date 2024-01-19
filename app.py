@@ -67,3 +67,10 @@ clicar(x=301, y=58)
 digitar_texto('https://file-examples.com/index.php/sample-video-files/')
 pressionar_botao('enter')
 esperar_pagina_carregar()
+
+# Acessando a página de vídeo MP4
+clicar(x=733, y=478)
+rolar_pagina(-2100)
+clicar(x=960, y=157)
+
+
