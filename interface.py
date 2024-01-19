@@ -11,4 +11,6 @@ def interface():
         [sg.Button('Finalizar', button_color='black',  size=(8,1), disabled=True)]
     ]
 
-    return sg.Window('Download de vídeo MP4', layout=layout)
+    window = sg.Window('Download de vídeo MP4', layout=layout)
+    return window
+
