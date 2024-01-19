@@ -5,6 +5,7 @@ from time import sleep
 
 
 
+
 def clicar(x: int, y:int):
     pg.click(x=x, y=y, duration=2)
     sleep(2)
@@ -46,14 +47,26 @@ def rolar_pagina(pixels: int):
     else:
         raise Exception("Valor informado inválido. Valor digitado não é do tipo 'int'.")
 
+
+def clica_imagem_detectada(image_path: str):
+    image_position = pg.locateCenterOnScreen(image_path)
+    clicar(image_position[0], image_position[1])
+    sleep(2)
+
+
 # Abrindo o navegador:
 pressionar_botao('win')
 digitar_texto('Google Chrome')
 pressionar_botao('enter')
 clicar(x=302, y=643)
+
 executar_atalho('alt', 'space')
-[pressionar_botao('up') for i in range(7)]
-pressionar_botao('enter')
+#[pressionar_botao('down') for i in range(5)]
+try:
+    clica_imagem_detectada('maximizar-janela.png')
+except: pass
+pressionar_botao('enter') 
+pressionar_botao('enter') 
 
 # Acessando o site: https://file-examples.com/
 digitar_texto('https://file-examples.com/')
@@ -72,5 +85,24 @@ esperar_pagina_carregar()
 clicar(x=733, y=478)
 rolar_pagina(-2100)
 clicar(x=960, y=157)
+esperar_pagina_carregar()
+try:
+    clica_imagem_detectada('fechar-propaganda.png')
+except:
+    clicar(x=1077, y=204)
 
+
+# Acessando a página de vídeo de 10MB
+clicar(x=733, y=478)
+rolar_pagina(-700)
+clicar(x=987,y=306)
+esperar_pagina_carregar()
+
+# Fazendo download do vídeo.
+clicar(x=1228, y=675)
+clicar(x=1139, y=585)
+pressionar_botao('enter')
+pressionar_botao('enter')
+sleep(10)
+executar_atalho('alt', 'f4')
 
