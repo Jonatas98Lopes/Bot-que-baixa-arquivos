@@ -15,12 +15,14 @@ def pressionar_botao(botao:str):
         pg.press(botao)
         sleep(2)
     else: 
-        raise Exception('Botão inválido. Esse botão não existe na biblioteca')
+        mensagem = 'Botão inválido. Esse botão não existe na biblioteca.\n'\
+            f' Lista de botões válidos abaixo:\n{pg.KEYBOARD_KEYS}'
+        raise Exception(mensagem)
 
 
 def digitar_texto(texto: str): 
     pyperclip.copy(texto)
-    pg.hotkey('ctrl', 'v')
+    executar_atalho('ctrl', 'v')
     sleep(2)
 
 
@@ -28,14 +30,21 @@ def esperar_pagina_carregar():
     sleep(40)
 
 
-def executar_atalho(botao1, botao2):
+def executar_atalho(botao1: str, botao2:str):
     if (botao1 in pg.KEYBOARD_KEYS) and (botao2 in pg.KEYBOARD_KEYS):
         pg.hotkey(botao1, botao2)
         sleep(2)
     else: 
-        raise Exception('Um ou mais botões inválidos. Digite um botão válido.')
+        mensagem = 'Um ou mais botões inválidos. Digite botões válidos.\n'\
+            f' Lista de botões válidos abaixo:\n{pg.KEYBOARD_KEYS}'
+        raise Exception(mensagem)
 
 
+def rolar_pagina(pixels: int):
+    if type(pixels) == int:
+        pg.scroll(pixels)
+    else:
+        raise Exception("Valor informado inválido. Valor digitado não é do tipo 'int'.")
 
 # Abrindo o navegador:
 pressionar_botao('win')
@@ -52,3 +61,9 @@ pressionar_botao('enter')
 esperar_pagina_carregar()
 clicar(x=733, y=478)
 
+# Acessando a página: https://file-examples.com/index.php/sample-video-files/
+rolar_pagina(-2100)
+clicar(x=301, y=58)
+digitar_texto('https://file-examples.com/index.php/sample-video-files/')
+pressionar_botao('enter')
+esperar_pagina_carregar()
