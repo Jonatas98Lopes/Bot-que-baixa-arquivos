@@ -5,8 +5,8 @@ from time import sleep
 
 
 
+window = interface()
 while True:
-    window = interface()
     event, values = window.read()
     if event in (sg.WIN_CLOSED, 'Cancelar', 'Finalizar'): 
         break
@@ -21,7 +21,7 @@ while True:
 
         main(window)
 
-    else:
+    elif event == 'encerrado':
         window['Finalizar'].update(disabled=False)
 
 
