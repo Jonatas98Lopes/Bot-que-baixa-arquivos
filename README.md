@@ -23,8 +23,10 @@ Esse é o [site](https://file-examples.com/) de onde vamos baixar o arquivo.
 
 * Possuir o navegador **Google Chrome** instalado.
 
-* Deixar habilitada, a janela de inicialização do **Chrome**.
-*Imagem de exemplo que mostra a janela de inicializaçção do Google Chrome:*
+* Deixar habilitada, a janela de inicialização do **Chrome**. 
+**OBS: VOCÊ SABE QUE A JANELA DE INICIALIZAÇÃO DO GOOGLE CHROME ESTÁ HABILITADA, SE QUANDO VOCÊ CLICA PARA ABRIR O NAVEGADOR, A TELA NA IMAGEM ABAIXO É MOSTRADA.**
+
+*Imagem de exemplo que mostra a janela de inicialização do Google Chrome:*
 
 ![Imagem que mostra uma janela de inicialização no Google Chrome](https://ravel.com.br/blog/wp-content/uploads/2021/12/image-11.png)
 
