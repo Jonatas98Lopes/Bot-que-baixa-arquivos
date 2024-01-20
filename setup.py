@@ -1,7 +1,7 @@
 import sys
 from cx_Freeze import setup, Executable
  
-arquivos = [] 
+arquivos = ['fechar-propaganda.png', 'maximizar-janela.png'] 
 
 base = "Win32GUI" if sys.platform == "win32" else None
  
